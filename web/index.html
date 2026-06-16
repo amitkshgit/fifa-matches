@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#10251f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="FIFA Matches">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>FIFA Matches</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="masthead" aria-labelledby="page-title">
+        <p class="eyebrow">FIFA World Cup 2026</p>
+        <h1 id="page-title">Today’s Matches</h1>
+        <p class="date-line" id="selected-date">Tuesday, June 16, 2026</p>
+      </section>
+
+      <section class="controls" aria-label="Match date controls">
+        <button class="icon-button" id="previous-day" type="button" aria-label="Previous day">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <input id="match-date" type="date" value="2026-06-16" min="2026-06-11" max="2026-07-19" aria-label="Select match date">
+        <button class="icon-button" id="next-day" type="button" aria-label="Next day">
+          <span aria-hidden="true">›</span>
+        </button>
+      </section>
+
+      <section class="summary-bar" aria-label="Daily summary">
+        <div>
+          <span class="summary-value" id="match-count">4</span>
+          <span class="summary-label">matches</span>
+        </div>
+        <div>
+          <span class="summary-value" id="group-count">2</span>
+          <span class="summary-label">groups</span>
+        </div>
+      </section>
+
+      <section class="match-list" id="match-list" aria-live="polite"></section>
+    </main>
+
+    <template id="match-card-template">
+      <article class="match-card">
+        <div class="teams">
+          <h2 class="team home"></h2>
+          <span class="versus">vs</span>
+          <h2 class="team away"></h2>
+        </div>
+        <dl class="details">
+          <div>
+            <dt>Group</dt>
+            <dd class="group"></dd>
+          </div>
+          <div>
+            <dt>Venue</dt>
+            <dd class="venue"></dd>
+          </div>
+          <div>
+            <dt>Kickoff</dt>
+            <dd>Check official schedule</dd>
+          </div>
+        </dl>
+      </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
