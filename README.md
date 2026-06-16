@@ -9,10 +9,10 @@ The repo includes:
 
 The initial data set includes the fixtures for Tuesday, June 16, 2026:
 
-- France vs Senegal
-- Iraq vs Norway
-- Argentina vs Algeria
-- Austria vs Jordan
+- France vs Senegal at 12:00 PM PT
+- Iraq vs Norway at 3:00 PM PT
+- Argentina vs Algeria at 6:00 PM PT
+- Austria vs Jordan at 9:00 PM PT
 
 ## Run the PWA locally
 

@@ -4,28 +4,32 @@ const fixtures = [
     homeTeam: "France",
     awayTeam: "Senegal",
     group: "Group I",
-    venue: "New York New Jersey Stadium, East Rutherford, NJ"
+    venue: "New York New Jersey Stadium, East Rutherford, NJ",
+    kickoffPacific: "12:00 PM PT"
   },
   {
     date: "2026-06-16",
     homeTeam: "Iraq",
     awayTeam: "Norway",
     group: "Group I",
-    venue: "Boston Stadium, Foxborough, MA"
+    venue: "Boston Stadium, Foxborough, MA",
+    kickoffPacific: "3:00 PM PT"
   },
   {
     date: "2026-06-16",
     homeTeam: "Argentina",
     awayTeam: "Algeria",
     group: "Group J",
-    venue: "Kansas City Stadium, Kansas City, MO"
+    venue: "Kansas City Stadium, Kansas City, MO",
+    kickoffPacific: "6:00 PM PT"
   },
   {
     date: "2026-06-16",
     homeTeam: "Austria",
     awayTeam: "Jordan",
     group: "Group J",
-    venue: "San Francisco Bay Area Stadium, Santa Clara, CA"
+    venue: "San Francisco Bay Area Stadium, Santa Clara, CA",
+    kickoffPacific: "9:00 PM PT"
   }
 ];
 
@@ -69,6 +73,7 @@ function render() {
     card.querySelector(".away").textContent = match.awayTeam;
     card.querySelector(".group").textContent = match.group;
     card.querySelector(".venue").textContent = match.venue;
+    card.querySelector(".kickoff").textContent = match.kickoffPacific;
     matchList.append(card);
   }
 }

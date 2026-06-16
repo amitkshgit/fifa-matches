@@ -1,4 +1,4 @@
-const CACHE_NAME = "fifa-matches-v1";
+const CACHE_NAME = "fifa-matches-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
