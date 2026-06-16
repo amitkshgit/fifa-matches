@@ -34,6 +34,7 @@ const fixtures = [
 ];
 
 const dateInput = document.querySelector("#match-date");
+const pageTitle = document.querySelector("#page-title");
 const selectedDate = document.querySelector("#selected-date");
 const matchCount = document.querySelector("#match-count");
 const groupCount = document.querySelector("#group-count");
@@ -57,6 +58,7 @@ function render() {
   const matches = fixtures.filter((match) => match.date === date);
   const groups = new Set(matches.map((match) => match.group));
 
+  pageTitle.textContent = relativeMatchTitle(date);
   selectedDate.textContent = formatDate(date);
   matchCount.textContent = matches.length;
   groupCount.textContent = groups.size;
@@ -92,6 +94,33 @@ function formatDate(dateValue) {
     day: "numeric",
     year: "numeric"
   }).format(new Date(`${dateValue}T12:00:00`));
+}
+
+function relativeMatchTitle(dateValue) {
+  const selected = parseLocalDate(dateValue);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const daysFromToday = Math.round((selected - today) / 86400000);
+
+  if (daysFromToday === 0) {
+    return "Today’s Matches";
+  }
+
+  if (daysFromToday === 1) {
+    return "Tomorrow’s Matches";
+  }
+
+  if (daysFromToday === -1) {
+    return "Yesterday’s Matches";
+  }
+
+  return "Matches";
+}
+
+function parseLocalDate(dateValue) {
+  const [year, month, day] = dateValue.split("-").map(Number);
+  return new Date(year, month - 1, day);
 }
 
 function emptyState() {
